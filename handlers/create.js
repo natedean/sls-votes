@@ -6,6 +6,7 @@ module.exports.default = (event, context, callback) => {
 
   const data = JSON.parse(event.body);
 
+  // TODO: More sane attribute checking method
   if (typeof data.user_id !== 'number' || typeof data.idea_id !== 'number') {
     handleValidationError(callback);
     return;
